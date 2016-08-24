@@ -1,6 +1,7 @@
 ﻿using Coypu;
 using NUnit.Framework;
 using GitHubAutomation.pageObjectModels.footer;
+using GitHubAutomation.pageObjectModels.explore;
 using GitHubAutomation.pageObjectModels.header;
 using GitHubAutomation.pageObjectModels.homepage;
 using GitHubAutomation.pageObjectModels.pricing;
@@ -26,6 +27,11 @@ namespace GitHubAutomation.tests.homepage
         Shop shop;
         pageObjectModels.footer.Blog footerBlog;
         About about;
+
+        // explore objects
+        Integrations integrations;
+        Showcases showcases;
+        Trending trending;
 
         // header objects
         pageObjectModels.header.Logo headerLogo;
@@ -92,6 +98,11 @@ namespace GitHubAutomation.tests.homepage
             shop = new Shop(browser);
             footerBlog = new pageObjectModels.footer.Blog(browser);
             about = new About(browser);
+
+            // initializing explore objects
+            integrations = new Integrations(browser);
+            showcases = new Showcases(browser);
+            trending = new Trending(browser);
 
             // initializing header objects
             headerLogo = new pageObjectModels.header.Logo(browser);
