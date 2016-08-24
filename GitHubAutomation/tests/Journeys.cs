@@ -76,6 +76,7 @@ namespace GitHubAutomation.tests.homepage
         {
             browser = new BrowserSession(new SessionConfiguration
             {
+                Browser = Coypu.Drivers.Browser.Chrome,
                 AppHost = "https://www.github.com"
             });
             browser.MaximiseWindow();

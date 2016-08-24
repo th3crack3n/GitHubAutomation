@@ -7,6 +7,7 @@ using GitHubAutomation.pageObjectModels.header;
 using GitHubAutomation.pageObjectModels.homepage;
 using GitHubAutomation.pageObjectModels.pricing;
 using GitHubAutomation.pageObjectModels.support;
+using System.Threading;
 
 namespace GitHubAutomation.tests
 {
@@ -85,6 +86,7 @@ namespace GitHubAutomation.tests
         {
             browser = new BrowserSession(new SessionConfiguration
             {
+                Browser = Coypu.Drivers.Browser.Chrome,
                 AppHost = "https://www.github.com"
             });
             browser.MaximiseWindow();
@@ -612,9 +614,7 @@ namespace GitHubAutomation.tests
 
             Assert.True(browser.Location.ToString().Equals("https://help.github.com/articles/set-up-git/"));
         }
-
-        // teardown
-
+        
         [TestFixtureTearDown]
         public void destroy()
         {
